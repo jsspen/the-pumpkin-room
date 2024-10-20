@@ -1,7 +1,11 @@
 <div align="center">
-# The Pumpkin Room
+<h1>The Pumpkin Room</h1>
+  
 <img src="img/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
-The Pumpkin Room is a spooky, text-based, story-driven game that I wrote for my daughters.
+
+  *You wake up standing at the door of a strange house deep in the woods...*
+  
+**The Pumpkin Room** is a spooky, text-based & story-driven game that I wrote for my daughters.
 </div>
 
 ## The Guts
