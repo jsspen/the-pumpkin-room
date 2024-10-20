@@ -1,0 +1,22 @@
+<h1 class="text-center p-6 text-3xl font-bold underline">{{ title }}</h1>
+<!-- <div *ngFor="let progress of playerProgress">
+  <p>You made the choice: {{ progress }}</p>
+</div> -->
+<div class="text-center p-6">
+  <p>{{ storyStart }}</p>
+  <br />
+  <p>{{ choice01 }}</p>
+  <br />
+  <button class="font-semibold hover:underline" click None="makeChoice('Choice 1')">
+    {{ option01a }}
+  </button>
+  or
+  <button class="font-semibold hover:underline" click None="makeChoice('Choice 2')">
+    {{ option01b }}
+  </button>
+  <br />
+  <br />
+  <button class="text-sm font-medium hover:underline" (click)="resetGame()">
+    Reset Game
+  </button>
+</div>
