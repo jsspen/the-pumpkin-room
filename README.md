@@ -1,9 +1,9 @@
-# The House on Pumpkin Island
+# The Pumpkin Room
 
 <div align="center">
-<img src="img/01.png" alt="A very old black and white photograph of a pile of pumpkins" width="450"/>
+<img src="img/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
 
-The House on Pumpkin Island is a spooky, text-based, story-driven game that I wrote for my daughters.
+The Pumpkin Room is a spooky, text-based, story-driven game that I wrote for my daughters.
 
 </div>
 
