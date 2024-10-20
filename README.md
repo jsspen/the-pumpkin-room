@@ -1,8 +1,11 @@
 # The House on Pumpkin Island
 
-<img src="img/01.png" alt="A very old black and white photograph of a pile of pumpkins" width="450" align="center"/>
+<div align="center">
+<img src="img/01.png" alt="A very old black and white photograph of a pile of pumpkins" width="450"/>
 
-<div align="center">The House on Pumpkin Island is a spooky, text-based, story-driven game that I wrote for my daughters.</div>
+The House on Pumpkin Island is a spooky, text-based, story-driven game that I wrote for my daughters.
+
+</div>
 
 ## The Guts
 
