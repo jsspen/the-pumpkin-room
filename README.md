@@ -1,10 +1,7 @@
-# The Pumpkin Room
-
 <div align="center">
+# The Pumpkin Room
 <img src="img/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
-
 The Pumpkin Room is a spooky, text-based, story-driven game that I wrote for my daughters.
-
 </div>
 
 ## The Guts
