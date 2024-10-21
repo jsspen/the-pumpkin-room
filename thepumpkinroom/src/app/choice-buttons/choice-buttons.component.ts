@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GameService } from '../game.service';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-choice-buttons',
@@ -11,9 +11,9 @@ import { GameService } from '../game.service';
 export class ChoiceButtonsComponent {
   // @Input() currentScene!: Scene;
 
-  constructor(private gameService: GameService) {}
+  constructor(private storyService: StoryService) {}
 
   // makeChoice(index: number) {
-  //   this.currentScene = this.gameService.makeChoice(index);
+  //   this.currentScene = this.storyService.makeChoice(index);
   // }
 }

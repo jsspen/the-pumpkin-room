@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GameService } from './game.service';
+import { StoryService } from './story.service';
 
 @Component({
   selector: 'app-root',
@@ -20,15 +20,15 @@ export class AppComponent {
 
   playerProgress: string[] = [];
 
-  constructor(private gameService: GameService) {}
+  constructor(private storyService: StoryService) {}
 
   makeChoice(choice: string) {
-    this.gameService.makeChoice(choice);
-    this.playerProgress = this.gameService.getProgress();
+    this.storyService.makeChoice(choice);
+    this.playerProgress = this.storyService.getProgress();
   }
 
   resetGame() {
-    this.gameService.resetGame();
+    this.storyService.resetGame();
     this.playerProgress = [];
   }
 }

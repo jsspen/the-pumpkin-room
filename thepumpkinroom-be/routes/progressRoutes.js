@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const UserProgress = require("../models/UserProgress");
+const Progress = require("../models/Progress");
 
 // Save user progress
 router.post("/progress", async (req, res) => {
   try {
     const { userId, currentPartId, completed } = req.body;
-    const progress = await UserProgress.create({
+    const progress = await Progress.create({
       userId,
       currentPartId,
       completed,

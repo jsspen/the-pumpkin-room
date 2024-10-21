@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-const UserProgress = sequelize.define("UserProgress", {
+const Progress = sequelize.define("Progress", {
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -16,4 +16,4 @@ const UserProgress = sequelize.define("UserProgress", {
   },
 });
 
-module.exports = UserProgress;
+module.exports = Progress;
