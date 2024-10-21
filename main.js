@@ -12,7 +12,7 @@ thePumpkinRoom = { name: "the pumpkin room" };
 
 // it all starts here
 theFrontPorch =
-  "You don't know how you got here but you are standing outside the front door of a house that you don't recognize. You look around but see only the deep dark woods in all directions. It's cold and you're very confused. You can see that the door to the house hasn't been shut all the way and there's a faint glow of light coming from inside. It's incredibly quiet but it's impossible to know if anyone is home. It seems like its the middle of the night";
+  "You don't know how you got here but you are standing outside the front door of a house that you don't recognize. You look around but see only the deep dark woods in all directions. It's cold and you're very confused. You can see that the door to the house hasn't been shut all the way and there's a faint glow of light coming from inside. It's incredibly quiet but it's impossible to know if anyone is home. It seems like its the middle of the night.";
 
 // the first choice
 choice001 =

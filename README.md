@@ -3,9 +3,10 @@
   
 <img src="img/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
 
-  *You wake up standing at the door of a strange house deep in the woods...*
-  
+_You wake up standing at the door of a strange house deep in the woods..._
+
 **The Pumpkin Room** is a spooky, text-based & story-driven game that I wrote for my daughters.
+
 </div>
 
 ## The Guts
