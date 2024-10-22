@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const sequelize = require("./config/database");
 
 const storyRoutes = require("./routes/storyRoutes");
-const progressRoutes = require("./routes/progressRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 
 const Question = require("./models/Question");
 const StoryPart = require("./models/StoryPart");
@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use("/api", storyRoutes);
-app.use("/api", progressRoutes);
+app.use("/api", profileRoutes);
 
 Question.belongsTo(StoryPart, { foreignKey: "storyPartId", as: "storyPart" });
 Question.hasMany(Choice, { as: "choices", foreignKey: "questionId" });

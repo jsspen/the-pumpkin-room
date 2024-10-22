@@ -1,4 +1,4 @@
-export interface Progress {
+export interface Profile {
   userId: number;
   userName: string;
   currentStoryPartId: number;

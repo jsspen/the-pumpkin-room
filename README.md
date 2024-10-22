@@ -21,7 +21,7 @@ Angular provides the modular, component-based architecture for the user interfac
 
 ### Backend: Node.js, PostgreSQL, RESTful API
 
-Story text, questions, and possible options are stored across three tables in a PostgreSQL database to increase flexibility and modularity. Data is fetched from the API using Sequelize. A fourth table stores player profiles which include username, game progress, and history. The player history persists across story resets, allowing you to see how many of the potential decisions you have faced in the game. Replay and take new paths to uncover all the possibilities.
+Story text, questions, and possible options are stored across three tables in a PostgreSQL database to increase flexibility and modularity. Data is fetched from the API using Sequelize. A fourth table stores player profiles which include username, game profile, and history. The player history persists across story resets, allowing you to see how many of the potential decisions you have faced in the game. Replay and take new paths to uncover all the possibilities.
 
 ### Deployment: TBA
 

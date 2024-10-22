@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Progress } from './models/progress.model';
+import { Profile } from './models/profile.model';
 import { Question } from './models/question.model';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class StoryService {
   constructor(private http: HttpClient) {}
 
   createNewPlayer(userName: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/progress`, {
+    return this.http.post(`${this.apiUrl}/profile`, {
       userName,
     });
   }
@@ -31,12 +31,12 @@ export class StoryService {
   }
 
   // need to pass userName
-  getProgress(): Observable<Progress> {
-    return this.http.get<Progress>(`${this.apiUrl}/progress`);
+  getProfile(): Observable<Profile> {
+    return this.http.get<Profile>(`${this.apiUrl}/profile`);
   }
 
-  saveProgress(progress: Progress): Observable<any> {
-    return this.http.put(`${this.apiUrl}/progress`, progress);
+  saveProfile(profile: Profile): Observable<any> {
+    return this.http.put(`${this.apiUrl}/profile`, profile);
   }
 
   resetGame(userName: string): Observable<any> {
@@ -45,6 +45,6 @@ export class StoryService {
       currentStoryPartId: 1,
       completed: false,
     };
-    return this.http.put(`${this.apiUrl}/progress`, resetState);
+    return this.http.put(`${this.apiUrl}/profile`, resetState);
   }
 }
