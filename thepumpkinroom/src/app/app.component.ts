@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { StoryService } from './story.service';
 import { Choice } from './models/choice.model';
 import { StoryPart } from './models/story-part.model';
+import { Question } from './models/question.model';
 
 @Component({
   selector: 'app-root',
@@ -13,20 +14,18 @@ import { StoryPart } from './models/story-part.model';
 })
 export class AppComponent {
   title = 'The Pumpkin Room';
-  // storyPart: any;
-  content: any;
-  playerProgress = {};
+  content: StoryPart | null = null;
+  questions: Question[] = [];
   userName = '';
   storyText = '';
-  questions: { text: string; choices: any[] }[] = [];
   questionText = '';
-  choices = [];
+  progress = {};
 
   constructor(private storyService: StoryService) {}
 
   fetchStoryPart(id: number) {
     this.storyService.getStoryPart(id).subscribe(
-      (response) => {
+      (response: StoryPart) => {
         console.log('Content fetched:', response);
         this.content = response;
         this.storyText = this.content.text;
@@ -52,28 +51,25 @@ export class AppComponent {
     });
   }
 
-  makeChoice(choice: Choice) {
-    this.storyService.getStoryPart(choice.nextStoryPartId);
-    this.playerProgress = this.storyService.getProgress();
-  }
-
   resetGame() {
-    this.storyService.resetGame(this.userName);
-    this.playerProgress = [];
+    this.storyService.resetGame(this.userName).subscribe((response) => {
+      console.log('Game Reset', response);
+    });
+    this.progress = {};
   }
 }
 
-// // Reset the game for a user
-// this.storyService.resetGame('JohnDoe').subscribe(response => {
-//   console.log('Game reset:', response);
-// });
+// TODOS
+// makeChoice(choice: Choice) {
+//   this.storyService.getStoryPart(choice.nextStoryPartId);
+//   this.playerProgress = this.storyService.getProgress();
+// }
 
-// // Save progress
 // const progress: Progress = {
-//   userId: 1,
-//   userName: 'JohnDoe',
-//   currentStoryPartId: 5,
-//   choicesMade: [2, 3, 6],
+//   userId: ,
+//   userName: this.userName,
+//   currentStoryPartId: ,
+//   choicesMade: [],
 //   completed: false
 // };
 

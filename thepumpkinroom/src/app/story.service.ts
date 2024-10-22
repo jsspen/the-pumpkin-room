@@ -40,6 +40,7 @@ export class StoryService {
   }
 
   resetGame(userName: string): Observable<any> {
+    console.log('game reset');
     const resetState = {
       userName: userName,
       currentStoryPartId: 1,
