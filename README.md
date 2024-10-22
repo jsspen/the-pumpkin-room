@@ -29,4 +29,4 @@ You want to play, don't you? Accessible cloud deployment coming soon.
 
 ### The Story
 
-I wrote all of the text in the game, no LLMs involved, and I retain the rights to it. To keep from going crosseyed while creating all the branching and looping pieces of the game I used a plain old spreadsheet and a flowchart "map" written in **Mermaid.js**. Both files are included here.
+I wrote all of the text in the game, no LLMs involved, and I retain the rights to it. To keep from going crosseyed while creating all the branching and looping pieces of the game I used a plain old spreadsheet and a flowchart "map" written in **Mermaid.js**. The mermaid chart can be found in the backend directory.
