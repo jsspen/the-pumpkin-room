@@ -1,0 +1,81 @@
+ flowchart TD
+
+    S1-->   Q1-->   C1-->   S2-->   Q2-->   C3
+                                    Q2-->   C4
+                                    Q2-->   C5
+                                    Q2-->   C6
+                                    Q2-->   C7
+            Q1-->   C2-->   S3-->   Q3-->   C8-->   S4
+                                    Q3-->   C9
+    S4-->   Q4-->   C11-->  S6
+    S6-->   Q4-->   C10-->  S5
+    S5-->   Q5-->   C13
+            Q5-->   C14
+            Q5-->   C12-->  S7
+    S7-->   Q6-->   C15-->  S8 
+    S8-->   Q7-->   C17
+            Q7-->   C18
+            Q7-->   C16-->  S9
+    S9-->   Q8-->   S10
+    S10-->  Q9-->   C21-->  S13
+            Q9-->   C23-->  S13
+            Q9-->   C22-->  S11
+    S11-->  Q10-->  C25-->  S13
+            Q10-->  C26-->  S13
+            Q10-->  C24-->  S12
+    S13
+
+    S1(THE BEGINNING)
+        Q1(Go inside or woods?)
+            C1(Go inside)
+                S2(You're in the house)
+                    Q2(Now what?)
+                        C3(Go back out)
+                        C4(Hallway)
+                        C5(Stairs)
+                        C6(Door)
+                        C7(Couch)
+            C2(Go woods)
+                S3(Woods are dark, hear sound)
+                    Q3(Find sound?)
+                        C9(Back to house)
+                        C8(Toward sound)
+                            S4(Ground gets shaky)
+                                Q4(Risk falling?)
+                                    C11(Find steady ground)
+                                        S6(Steady ground)
+                                    C10(Risk but go slow)
+                                        S5(Trip & fall, find car)
+                                            Q5(Check car out?)
+                                                C13(Call out)
+                                                C14(Walk away)
+                                                C12(Check car door)
+                                                    S7(Car empty & unlocked)
+                                                        Q6(Get in?)
+                                                            C15(Sit down)
+                                                                S8(Car radio gives messages)
+                                                                    Q7(What now?)
+                                                                        C17(Get out)
+                                                                        C18(Get out & grab keys)
+                                                                        C16(Turn on headlights)
+                                                                            S9(Just dense trees)
+                                                                                Q8(Try to drive anyway?)
+                                                                                    S10(Car sinks into void)
+                                                                                        Q9(Stay or go into void?)
+                                                                                            C21(Go but grab car keys)
+                                                                                                S13(THE PUMPKIN ROOM)
+                                                                                            C23(Get out)
+                                                                                                S13(THE PUMPKIN ROOM)
+                                                                                            C22(Stay)
+                                                                                                S11(Radio plays warning)
+                                                                                                    Q10(Get out now)
+                                                                                                        C25(Get out)
+                                                                                                            S13(THE PUMPKIN ROOM)
+                                                                                                        C26(Go but grab car keys)
+                                                                                                            S13(THE PUMPKIN ROOM)
+                                                                                                        C24(Stay inside)
+                                                                                                            S12(Trapped, dead)
+
+    
+    
+    

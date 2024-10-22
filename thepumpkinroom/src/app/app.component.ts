@@ -16,9 +16,9 @@ export class AppComponent {
   title = 'The Pumpkin Room';
   content: StoryPart | null = null;
   questions: Question[] = [];
+  choices: Choice[] = [];
   userName = '';
   storyText = '';
-  questionText = '';
   progress = {};
 
   constructor(private storyService: StoryService) {}
@@ -30,10 +30,6 @@ export class AppComponent {
         this.content = response;
         this.storyText = this.content.text;
         this.questions = this.content.questions;
-        const questionCount = this.questions.length;
-        if (questionCount === 1) {
-          this.questionText = this.questions[0].text;
-        }
       },
       (error) => {
         console.error('Error fetching StoryPart', error);
