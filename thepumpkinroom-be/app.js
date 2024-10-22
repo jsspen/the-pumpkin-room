@@ -1,7 +1,3 @@
-const Question = require("./models/Question");
-const StoryPart = require("./models/StoryPart");
-const Choice = require("./models/Choice");
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("./config/database");
@@ -9,11 +5,21 @@ const sequelize = require("./config/database");
 const storyRoutes = require("./routes/storyRoutes");
 const progressRoutes = require("./routes/progressRoutes");
 
+const Question = require("./models/Question");
+const StoryPart = require("./models/StoryPart");
+const Choice = require("./models/Choice");
+
 const app = express();
 app.use(bodyParser.json());
 
 app.use("/api", storyRoutes);
 app.use("/api", progressRoutes);
+
+Question.belongsTo(StoryPart, { foreignKey: "storyPartId", as: "storyPart" });
+Question.hasMany(Choice, { as: "choices", foreignKey: "questionId" });
+Choice.belongsTo(Question, { foreignKey: "questionId", as: "question" });
+StoryPart.hasMany(Question, { as: "questions", foreignKey: "storyPartId" });
+
 // Sync models with the database
 sequelize.sync({ alter: true }).then(() => {
   app.listen(3000, () => {

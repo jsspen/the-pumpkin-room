@@ -1,6 +1,7 @@
 export interface Progress {
   userId: number;
-  storyPart: number;
-  question: number;
-  choice: number;
+  userName: string;
+  currentStoryPartId: number;
+  choicesMade: Array<number>;
+  completed: boolean;
 }

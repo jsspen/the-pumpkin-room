@@ -1,34 +1,82 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StoryService } from './story.service';
+import { Choice } from './models/choice.model';
+import { StoryPart } from './models/story-part.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'The Pumpkin Room';
-  storyStart =
-    "You don't know how you got here but you are standing outside the front door of a house that you don't recognize. You look around but see only the deep dark woods in all directions. It's cold and you're very confused. You can see that the door to the house hasn't been shut all the way and there's a faint glow of light coming from inside. It's incredibly quiet but it's impossible to know if anyone is home. It seems like its the middle of the night.";
-  choice01 =
-    'Do you open the door and look around inside the house or do you try to find your way through the woods?';
-  option01a = 'Head into the house';
-  option01b = 'Head into the woods';
-
-  playerProgress: string[] = [];
+  // storyPart: any;
+  content: any;
+  playerProgress = {};
+  userName = '';
+  storyText = '';
+  questions: { text: string; choices: any[] }[] = [];
+  questionText = '';
+  choices = [];
 
   constructor(private storyService: StoryService) {}
 
-  makeChoice(choice: string) {
-    this.storyService.makeChoice(choice);
+  fetchStoryPart(id: number) {
+    this.storyService.getStoryPart(id).subscribe(
+      (response) => {
+        console.log('Content fetched:', response);
+        this.content = response;
+        this.storyText = this.content.text;
+        this.questions = this.content.questions;
+        const questionCount = this.questions.length;
+        if (questionCount === 1) {
+          this.questionText = this.questions[0].text;
+        }
+      },
+      (error) => {
+        console.error('Error fetching StoryPart', error);
+      }
+    );
+  }
+
+  ngOnInit() {
+    this.fetchStoryPart(1);
+  }
+
+  newGame(userName: string) {
+    this.storyService.createNewPlayer(userName).subscribe((response) => {
+      console.log('Player created:', response);
+    });
+  }
+
+  makeChoice(choice: Choice) {
+    this.storyService.getStoryPart(choice.nextStoryPartId);
     this.playerProgress = this.storyService.getProgress();
   }
 
   resetGame() {
-    this.storyService.resetGame();
+    this.storyService.resetGame(this.userName);
     this.playerProgress = [];
   }
 }
+
+// // Reset the game for a user
+// this.storyService.resetGame('JohnDoe').subscribe(response => {
+//   console.log('Game reset:', response);
+// });
+
+// // Save progress
+// const progress: Progress = {
+//   userId: 1,
+//   userName: 'JohnDoe',
+//   currentStoryPartId: 5,
+//   choicesMade: [2, 3, 6],
+//   completed: false
+// };
+
+// this.storyService.saveProgress(progress).subscribe(response => {
+//   console.log('Progress saved:', response);
+// });

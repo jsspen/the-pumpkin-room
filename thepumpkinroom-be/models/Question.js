@@ -1,15 +1,21 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-const Question = sequelize.define("Question", {
-  text: {
-    type: DataTypes.TEXT,
-    allowNull: false,
+const Question = sequelize.define(
+  "Question",
+  {
+    text: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    storyPartId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
-  storyPartId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-});
+  {
+    timestamps: false,
+  }
+);
 
 module.exports = Question;
