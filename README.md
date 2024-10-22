@@ -19,10 +19,10 @@ TypeScript handles the core logic of the game, tracking the player's choices, br
 
 Angular provides the modular, component-based architecture for the user interface. I chose Angular for its two-way data binding, which makes it easy to update the game state and reflect changes in the UI. I used Tailwind for easy to manage, flexible, and consistent styling.
 
-### Backend: TBA
+### Backend: Node.js, PostgreSQL, RESTful API
 
 Allows saving progress and tracking the number of choices made in a game. Did you find a fast escape? Did you quickly meet your fate? Did you really explore all there is to explore?
 
 ### Deployment: TBA
 
-You want to play, don't you?
+You want to play, don't you? Soon.
