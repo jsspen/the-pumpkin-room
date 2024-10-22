@@ -5,16 +5,24 @@
 <div class="text-center p-6">
   <p>{{ storyText }}</p>
   <br />
-  <p><i>{{ questions[0].text }}</i></p>
-  <br />
-  <button class="font-semibold hover:underline" click None="makeChoice('Choice 1')">
-    Option A
-  </button>
-  or
-  <button class="font-semibold hover:underline" click None="makeChoice('Choice 2')">
-    Option B
-  </button>
-  <br />
+
+  <p>
+    <i>{{ question?.text }}</i>
+  </p>
+  <div *ngIf="(questions[0].choices || []).length > 0">
+    <br /><br />
+    <ul>
+      <li *ngFor="let choice of questions[0].choices; last as isLast">
+        <button
+          class="font-semibold hover:underline"
+          (click)="makeChoice(choice)"
+        >
+          {{ choice?.text }}
+        </button>
+        <div *ngIf="!isLast">or</div>
+      </li>
+    </ul>
+  </div>
   <br />
   <button class="text-sm font-medium hover:underline" (click)="resetGame()">
     Reset Game
