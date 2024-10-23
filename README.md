@@ -1,7 +1,7 @@
 <div align="center">
 <h1>The Pumpkin Room</h1>
   
-<img src="thepumpkinroom/imgs/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
+<img src="thepumpkinroom-fe/imgs/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
 
 _You wake up standing at the door of a strange house deep in the woods..._
 

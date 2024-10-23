@@ -1,5 +1,5 @@
 {
-  "name": "thepumpkinroom",
+  "name": "thepumpkinroom-fe",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:thepumpkinroom": "node dist/thepumpkinroom/server/server.mjs"
+    "serve:ssr:thepumpkinroom-fe": "node dist/thepumpkinroom-fe/server/server.mjs"
   },
   "private": true,
   "dependencies": {
