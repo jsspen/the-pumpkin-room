@@ -1,29 +1,31 @@
-<div class="text-center p-6">
-  <h1 class="text-center p-6 text-3xl font-bold underline">{{ title }}</h1>
+<div class="p-6 text-white">
+  <h1 class="p-6 text-4xl font-bold underline font-underdog">{{ title }}</h1>
 
   <!-- landing page -->
   <div *ngIf="!hasSelectedGame">
     <button class="hover:font-semibold hover:underline" (click)="newGame()">
-      Start New Game
+      Begin
     </button>
     |
     <button class="hover:font-semibold hover:underline" (click)="loadGame()">
-      Load Game
+      Load
     </button>
   </div>
 
   <!-- New game form for username input -->
   <div *ngIf="showNewGameForm">
-    <label for="name-input"><i>What is your name?</i></label>
+    <label for="name-input" class="font-underdog italic"
+      >What is your name?</label
+    >
     <br /><br />
     <input
       id="name-input"
       type="text"
-      class="justify-center p-4 border border-grey-300 rounded-lg bg-grey-50 text-base"
+      class="p-4 border border-grey-300 rounded-lg bg-grey-50 text-base"
       [(ngModel)]="userName"
     /><br /><br />
     <button
-      class="hover:font-semibold hover:underline"
+      class="hover:font-semibold hover:underline font-underdog"
       (click)="submitNewGame()"
     >
       Submit
@@ -36,28 +38,34 @@
   </div>
 
   <div *ngIf="hasStartedGame">
-    <p>{{ storyText }}</p>
-    <br />
-    <p>
+    <p class="p-12">{{ storyText }}</p>
+    <p class="font-underdog text-xl">
       <i>{{ question?.text }}</i>
     </p>
     <div *ngIf="(questions[0].choices || []).length > 0">
       <br /><br />
-      <ul>
-        <li *ngFor="let choice of questions[0].choices; last as isLast">
+
+      <div class="flex flex-wrap justify-center items-center space-x-2">
+        <ng-container
+          *ngFor="let choice of questions[0].choices; last as isLast"
+        >
           <button
-            class="font-semibold hover:underline"
+            class="font-semibold hover:underline font-underdog min-w-max"
             (click)="makeChoice(choice)"
           >
             {{ choice?.text }}
           </button>
-          <div *ngIf="!isLast">or</div>
-        </li>
-      </ul>
+          <span *ngIf="!isLast" class="mx-2">or</span>
+        </ng-container>
+      </div>
+
+      <br />
+      <button
+        class="fixed bottom-0 left-0 right-0 mx-auto text-sm mb-4 p-2 font-medium hover:underline font-underdog italic"
+        (click)="resetGame()"
+      >
+        Start Over
+      </button>
     </div>
-    <br />
-    <button class="text-sm font-medium hover:underline" (click)="resetGame()">
-      Reset Game
-    </button>
   </div>
 </div>

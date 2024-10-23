@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        georgia: ["Georgia", "serif"],
+        underdog: ["Underdog", "serif"],
+      },
+    },
   },
   plugins: [],
 };
