@@ -1,7 +1,7 @@
 <div align="center">
 <h1>The Pumpkin Room</h1>
   
-<img src="thepumpkinroom-fe/imgs/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
+<img src="thepumpkinroom-fe/public/imgs/01.jpg" alt="A dark photo of a house in the woods" width="450"/>
 
 _You wake up standing at the door of a strange house deep in the woods..._
 
@@ -29,4 +29,4 @@ You want to play, don't you? Accessible cloud deployment coming soon.
 
 ### The Story
 
-I wrote all of the text in the game, no LLMs involved, and I retain the rights to it. To keep from going crosseyed while creating all the branching and looping pieces of the game I used a plain old spreadsheet and a flowchart "map" written in **Mermaid.js**. The mermaid chart can be found in the backend directory.
+I wrote all of the text in the game, no LLMs involved, and I retain all rights to it. To keep from going crosseyed while creating all the branching and looping pieces of the game I used a plain old spreadsheet and a flowchart "map" written in **Mermaid.js**. The mermaid chart can be found in the backend directory.
